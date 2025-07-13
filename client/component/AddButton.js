@@ -8,7 +8,7 @@ function AddButton({ onPress, title, desc, clockRef, calendarRef }) {
     try {
       const time = clockRef.current?clockRef.current:null; 
       const date = calendarRef.current?calendarRef.current:null;
-
+      
       if (!time || !date || !title || !desc) {
         Alert.alert("Missing info", "Please complete all fields.");
         return;
@@ -22,7 +22,7 @@ function AddButton({ onPress, title, desc, clockRef, calendarRef }) {
 
       if (time.toLowerCase().includes('pm') && hour !== 12) hour += 12;
       if (time.toLowerCase().includes('am') && hour === 12) hour = 0;
-
+      
       await Notifications.scheduleNotificationAsync({
         content: {
           title: title || "Reminder",

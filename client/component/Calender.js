@@ -3,7 +3,7 @@ import { TouchableOpacity, StyleSheet, Text, View } from "react-native";
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import moment from 'moment';
 
-const Calender = () => {
+const Calender = ({calendarRef}) => {
   const [visible, setVisible] = useState(false);
   const [date, setDate] = useState(new Date());
   const [text, setText] = useState('Calendar');
@@ -13,8 +13,9 @@ const Calender = () => {
   };
 
   const handleConfirm = (selectedDate) => {
-    setDate(selectedDate); // still keep Date object for logic
-    setText(moment(selectedDate).format('DD-MM-YYYY')); // display formatted
+    calendarRef.current=selectedDate;
+    setDate(selectedDate); 
+    setText(moment(selectedDate).format('DD-MM-YYYY')); 
     hideDatePicker();
   };
 
