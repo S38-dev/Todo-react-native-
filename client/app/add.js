@@ -9,7 +9,7 @@ export default function Add() {
   const [desc, setDesc] = useState('');
   const clockRef = useRef();
   const calendarRef = useRef();
-dgfggfgfgfgfgfgf
+ fgfggf
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
