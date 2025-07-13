@@ -1,13 +1,13 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, Alert } from 'react-native';
 import * as Notifications from 'expo-notifications';
-
+const {storeData,getData} =require('./asyncStorage.js');
 function AddButton({ onPress, title, desc, clockRef, calendarRef }) {
-
+ 
   const handlePress = async () => {
     try {
-      const time = clockRef.current?.getTime(); 
-      const date = calendarRef.current?.getDate();
+      const time = clockRef.current?clockRef.current:null; 
+      const date = calendarRef.current?calendarRef.current:null;
 
       if (!time || !date || !title || !desc) {
         Alert.alert("Missing info", "Please complete all fields.");
@@ -35,7 +35,7 @@ function AddButton({ onPress, title, desc, clockRef, calendarRef }) {
         },
       });
 
-      Alert.alert("Success 🎉", "Your alarm has been set!");
+      Alert.alert( "Your alarm has been set!");
 
     } catch (err) {
       Alert.alert("Error", "Failed to schedule notification.");

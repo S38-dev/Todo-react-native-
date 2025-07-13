@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
 import { router } from 'expo-router';
+
 function AddTodo(){
    
     return( 

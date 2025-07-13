@@ -1,7 +1,7 @@
 import { ScrollView, TouchableOpacity, StyleSheet, Text, View } from "react-native"
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
-const Clock = () => {
+const Clock = ({clockRef}) => {
 
     const [Visible, setVisible] = useState(false);
     const [minuteRotation, setminuteRotation] = useState('0deg');
@@ -13,7 +13,9 @@ const Clock = () => {
     const hour = useRef(10);
     const minute = useRef(12);
 
-
+   useEffect(()=>{
+      clockRef.current=text;
+   },[text,clockTime])
 
 
     function updateClock(time) {
