@@ -1,4 +1,4 @@
-// app/add.js
+
 import React, { useRef, useState } from 'react';
 import {
   View, TextInput, TouchableWithoutFeedback,
