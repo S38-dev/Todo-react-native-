@@ -1,4 +1,4 @@
-// app/index.js
+
 import React, { useContext } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import AddTodo   from '../component/AddTodo';
