@@ -25,7 +25,7 @@ export default function Add() {
           onChangeText={setDesc}
           multiline
         />
-
+   d
         <TextInput
           style={styles.input}
           placeholder="Title"
