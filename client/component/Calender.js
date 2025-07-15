@@ -14,6 +14,7 @@ const Calender = ({calendarRef}) => {
 
   const handleConfirm = (selectedDate) => {
     calendarRef.current=selectedDate;
+    console.log("date",selectedDate)
     setDate(selectedDate); 
     setText(moment(selectedDate).format('DD-MM-YYYY')); 
     hideDatePicker();

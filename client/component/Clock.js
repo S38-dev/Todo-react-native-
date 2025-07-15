@@ -15,6 +15,7 @@ const Clock = ({clockRef}) => {
 
    useEffect(()=>{
       clockRef.current=text;
+   
    },[text,clockTime])
 
 
@@ -112,7 +113,7 @@ const Clock = ({clockRef}) => {
                             '11 : 00 ', '11 : 30 '
                         ].map((time, index) => (
                             <TouchableOpacity key={index} onPress={() => updateClock(time)}>
-                                <Text style={{ color: 'white', fontSize: 40, textAlign: 'center', paddingVertical: 10 }}>
+                                <Text style={{ color: 'white', fontSize: 30, textAlign: 'center', paddingVertical: 10 }}>
                                     {time}
                                 </Text>
                             </TouchableOpacity>
